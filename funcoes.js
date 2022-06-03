@@ -64,3 +64,40 @@ function thisFunctions(){
 
 
 
+
+
+
+
+// lista de exercicios 
+// 1
+function calculo(a = 0 , b = 0){
+    console.log(`soma = ${a+b}`);
+    console.log(`subtraçao  = ${a-b}`);
+    console.log(`multiplicaçao = ${a*b}`);
+    console.log(`divisao = ${a /b }`);
+}
+
+// 2
+function triangulo(l1=0,l2=0,l3=0){
+    let menssagem = () => "O triangulo nao pode ter lados com valor zero";
+    let resultado = null;
+    if(l1 == 0 || l2 == 0 || l3 == 0){
+        return menssagem();
+    }
+    else{
+        if(l1== l2 && l2 == l3){
+            resultado = "triangulo equilatero";
+        }
+        else if((l1 == l2 && l1 !=l3) || (l2 == l3 && l2!=l1) || (l3 == l1 && l1 !=l2)){
+            resultado = "triangulo isoceles";
+        }
+        else{
+            resultado = "triangulo escaleno";
+        }
+        return resultado;
+    }
+}
+// 3
+let elevar = (b,e) => b**e;
+// 4
+
