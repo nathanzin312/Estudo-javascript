@@ -28,4 +28,39 @@ function valorPadro2(a =1,b=1,c=1,d=1){//se um parametro nao receber valor ele v
     return a+b+c+d;
 }
 
-// arrow function
+// this é usado para referenciar de onde vem a variavel e pode variar
+// em funçoes normais o this sempre vai referenciar onde a funçao for chamada
+// no exemplo a abaixo se a funçao nao for executada no body elea vai retornar false pois o this se refere ao lugar de execuçao
+function testeThis(){
+    return this===body;
+}
+
+// o this nas arrows functions nao segue esse padrao, se a funçao for criada no body e for chamada em outro lugar ela sempre vai retornar true pois o this nesse caso se refere ao lugar de criaçao
+const teste2 = () => this===body;
+
+// o this com excesao das arrow functions vai referenciar ao lugar de execuçao ou no caso de variveis o lugar onde foi feito a atribuiçao 
+let pessoa= {
+    nome:'Programador fullstack',
+    chamar(){
+        console.log(this.nome);
+    }
+}
+pessoa.chamar();
+
+// nesse primeiro caso o this funciona pois o this se refere a pessoa 
+let chamado = pessoa.chamar();//nesse caso retorna undefined porque o this vai se referir a variavel chamado e nao ao objeto pessoa
+console.log(chamado);
+// para resolver isso existe a palavra bind que significa vincular, essa funçao bind vai definir que nao importa o contexto que a funçao chamar for invocada o this vai se referir ao objeto pessoa
+let chamado1 = pessoa.chamar().bind(pessoa);
+console.log(chamado1);
+
+// no caso de funçoes acontece a mesma coisa
+function thisFunctions(){
+    this.idade=10;
+    setInterval(function fun2(){
+        console.log(this.idade+1);
+    }.bind(this),1500)
+}
+
+
+
