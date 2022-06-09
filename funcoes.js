@@ -42,17 +42,17 @@ const teste2 = () => this===body;
 let pessoa= {
     nome:'Programador fullstack',
     chamar(){
-        console.log(this.nome);
+        // console.log(this.nome);
     }
 }
-pessoa.chamar();
+// pessoa.chamar();
 
 // nesse primeiro caso o this funciona pois o this se refere a pessoa 
 let chamado = pessoa.chamar();//nesse caso retorna undefined porque o this vai se referir a variavel chamado e nao ao objeto pessoa
-console.log(chamado);
+// console.log(chamado);
 // para resolver isso existe a palavra bind que significa vincular, essa funçao bind vai definir que nao importa o contexto que a funçao chamar for invocada o this vai se referir ao objeto pessoa
-let chamado1 = pessoa.chamar().bind(pessoa);
-console.log(chamado1);
+// let chamado1 = pessoa.chamar().bind(pessoa);
+// console.log(chamado1);
 
 // no caso de funçoes acontece a mesma coisa
 function thisFunctions(){
@@ -62,10 +62,38 @@ function thisFunctions(){
     }.bind(this),1500)
 }
 
+//funçoes callback
+let carros = ["ferrari" , "mercedes", "uno" , "carroça"];
+
+function funSemCallBack(nome, indice ){
+    console.log(`${indice+1} ${nome} `);
+}
+
+carros.forEach(funSemCallBack);
 
 
+// funçoes construtoras sao parecidas com as classes em java
+// sao usadas funçoes construtoras para instanciar objetos
+function veiculo(tipo,velocidadeMaxima = 150, acelerada = 10){
+    let tipo1 =  tipo;
+    let velocidadeAtual = 0;
 
+    this.setVelocidadeAtual = function(){
+        if(velocidadeAtual + acelerada <= velocidadeMaxima){
+            velocidadeAtual += acelerada;
+        }else{
+            velocidadeAtual = velocidadeMaxima;
+        }
+    }
 
+    this.getVelocidadeAtual = function (){
+        return velocidadeAtual;
+}
+}
+
+const pampa = new veiculo('pampa');
+pampa.setVelocidadeAtual();
+console.log(pampa.getVelocidadeAtual());
 
 
 // lista de exercicios 
@@ -99,5 +127,17 @@ function triangulo(l1=0,l2=0,l3=0){
 }
 // 3
 let elevar = (b,e) => b**e;
-// 4
 
+// 4
+const divsao4 = function (a,b){
+    console.log(`${a/b} o resto é ${a%b}`);
+}
+
+// 5
+ function converter(value){
+    value= value.toFixed(2);
+    return `R$ ${value.toString().replace('.' , ',')}`;
+ }
+
+
+ console.log(converter(3.444444));
