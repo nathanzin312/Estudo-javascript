@@ -386,7 +386,264 @@ function salario(nome,salario,plano){
 
 // console.log(salario('nathan', 1000, 'a'));
 
-// 
+// 18
+function programa(num){
+    let r = 'Numero fora do intervalo'
+    switch(num){
+        case 0:
+           r= 'zero'
+           break
+           case 1:
+            r= 'um'
+            break
+            case 2:
+           r= 'dois'
+           break
+           case 3:
+           r= 'tres'
+           break
+           case 4:
+           r= 'quatro'
+           break
+           case 5:
+           r= 'cinco'
+           break
+           case 6:
+           r= 'seis'
+           break
+           case 7:
+           r= 'sete'
+           break
+    }
+    return r;
+}
+
+// console.log(programa(3));
+
+// 19
+function produtos(codigo ,quantidade = 1){
+    let valorUnidade = 0;
+    let resposta = 'Codigo do produto nao encontrado';
+    let produto ='desconhecido';
+    switch(codigo){
+        case 100:
+            valorUnidade = 3;
+            produto ='Cachorro Quente';
+            break
+        case 200:
+            valorUnidade = 4
+            produto = 'Hambúrguer Simples';
+            break
+        case 300:
+            valorUnidade = 5.5
+            produto = 'Cheeseburguer';
+            break
+        case 400:
+            valorUnidade = 7.5
+            produto = 'Bauru';
+            break
+        case 500:
+            valorUnidade = 3.5
+            produto= 'Refrigerante';
+            break
+        case 600:
+            valorUnidade = 2.8
+            produto='Suco';
+            break
+      }
+      resposta = `${quantidade} ${produto} custa: R$${quantidade * valorUnidade}`;
+      return resposta;
+}
+
+// console.log(produtos(200,2));
+
+// 20
+function troco(valor){
+    let cem = 0;
+    let cinquenta =0;
+    let vinte=0;
+    let dez=0;
+    let cinco=0;
+    let dois = 0;
+    let um=0;
+    if(valor>=100){
+        while(valor>=100){
+            valor-=100;
+            cem++
+        }
+    }
+     if(valor>=50){
+        while(valor>=50){
+            valor-=50;
+            cinquenta++
+        }
+    }
+     if(valor >= 20){
+        while(valor>=20){
+            valor-=20;
+            vinte++
+        }
+    }
+     if(valor>=10)
+    {
+        while(valor>=10){
+            valor-=10;
+            dez++
+        }
+    }
+    if(valor>=5){
+        while(valor>=5){
+            valor-=5;
+            cinco++
+        }
+    }
+    if(valor>=2){
+        while(valor>=2){
+            valor-=2;
+            dois++
+        }
+    }
+     if(valor>=1)
+    {
+        while(valor>=1){
+            valor-=1;
+            um++
+        }
+    }
+    return `R$100-${cem} R$50-${cinquenta} R$20-${vinte} R$10-${dez} R$5-${cinco} R$2-${dois} R$1-${um}`;
+}
+
+// console.log(troco(19));
+
+// 21
+function planoDeSaude(nome,idade){
+     let valorPlano=0;
+    if(idade<=10){
+        valorPlano=80
+    }else if(idade>10 && idade < 30){
+        valorPlano= 50;
+    }else if(idade >30 && idade <60){
+        valorPlano=95;
+    }else if(idade>60){
+        valorPlano=130;
+    }
+    return `Ola ${nome} o valor do seu plano é ${valorPlano}`;
+}
+
+// console.log(planoDeSaude('nathan',69));
+
+// 22
+function anuidade(valor,mes){
+    let tempo = mes -1;
+    return jurosCompostos(valor,5,tempo);
+}
+
+// console.log(anuidade(100,2));
+
+// 23
+function notas23(codigo,notas){
+    let maior=0;
+    let id=0;
+    let soma = 0;
+    let media=0;
+    let result;
+    for(let i=0;i<3;i++){
+        for(let j = 3; j>0;j--){
+            if(notas[i]>notas[j]){
+                maior=notas[i];
+                id=i;
+            }
+        }
+    }
+    for(let i=0;i<3;i++){
+        if(i != id){
+            soma += notas[i]*3;
+        }else{
+            soma += notas[i]*4;
+        }
+    }
+    media=soma/10;
+    if(media>=5){
+        result = `o Aluno de codigo ${codigo} esta aprovado com media igual a: ${media}`
+    }else{
+        result = `o Aluno de codigo ${codigo} esta reprovado com media igual a: ${media}`
+    }
+    return result;
+}
+let notas233=[2,2,4]
+// console.log(notas23(24,notas233));
+
+// 24
+function helloWorld(){
+    let i = 1;
+    while(i<=11){
+        console.log('Hello World');
+        i++
+    }
+}
+
+helloWorld();
+
+// 25
+function contAte50(){
+    let i=0;
+    while(i<=50){
+        console.log(i)
+        i++
+    }
+}
+
+// contAte50()
+
+// 26
+function par(){
+    let i=0;
+    while(i<=100){
+        if(i%2==0){
+            console.log(i);
+        }
+        i++
+    }
+}
+
+// par()
+
+// 27
+function altura(kid1,kid2){
+    let maior;
+    let menor;
+    let anos=0;
+    if(kid1[0]<kid2[0]){
+        maior = kid2
+        menor = kid1;
+    }else{
+        maior = kid1;
+        menor = kid2;
+    }
+    if(maior[1]<menor[1]){
+        while(maior[0]>menor[0]){
+            maior[0]+=maior[1];
+            menor[0]+=menor[1];
+            anos++;
+        }
+    }
+    return `o menor ultrapassar em ${anos}`
+}
+
+let kid1=[3,1]
+let kid2=[1,2]
+console.log(altura(kid1,kid2));
+
+// 28
+
+
+
+
+
+
+
+
+
 
 
 
