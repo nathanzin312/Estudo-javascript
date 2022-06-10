@@ -139,5 +139,259 @@ const divsao4 = function (a,b){
     return `R$ ${value.toString().replace('.' , ',')}`;
  }
 
+//6
 
- console.log(converter(3.444444));
+function jurosSimples(valor,taxa,tempo){
+    let resultado = valor;
+    for(i=0 ; i<tempo; i++){
+        resultado += (valor/100) * taxa;
+    }
+    return resultado;
+}
+
+function jurosCompostos(valor, taxa, tempo){
+    let resultado = valor;
+    for(i=0;i<tempo;i++){
+        resultado += (resultado/100) *taxa; 
+    }
+    return resultado;
+}
+
+//7
+function baskhara(a,b,c){
+    let delta = b**2 - (4 * a * c);
+    if(Math.sign(delta) == 1){
+    let result = [];
+    result.push((-b + (Math.sqrt(delta))) / (2 * a));
+    result.push((-b - (Math.sqrt(delta))) / (2 * a));
+    return result;
+    }
+    else{
+        return `O delta ${delta} é negativo`
+    }
+}
+
+// console.log(baskhara(2,-6,0));
+
+// 8
+
+function basquete(jogos){
+    let maximo = 0;
+    let minimo = 10;
+    let recordes = -1;
+    for(i = 0 ; i < jogos.length ;i++){
+        if(jogos[i] > maximo){
+            maximo = jogos[i];
+            recordes++;
+    }else if(jogos[i] < minimo ){
+        minimo = [i];
+    }
+}
+let result =`Ele quebrou o recorde ${recordes}vezes e o seu maior plcar é: ${maximo}, o meno placar ocorreu no ${minimo} jogo`;
+return result;
+}
+
+const jogos = [10 ,20, 20 ,8 ,25, 3, 0 ,30 ,1]
+// console.log(basquete(jogos));
+
+// 9
+function notas(nota){
+    let result;
+    if(nota <= 40){
+        result = `o aluno esta reprovado com nota ${nota}`
+    }
+    else {
+        if(nota % 5 >= 3){
+            nota = nota + (5 - nota % 5 );
+        }
+        result = `O aluno passou com nota ${nota}`;
+    }
+    return result;
+}
+
+// console.log(notas(82));
+
+// 10
+function multiplo3(num){
+    return num%3 == 0;
+}
+
+console.log(multiplo3(6));
+
+// 11
+function anoBisesto(ano){
+    let result
+    if(ano%400 ==0){
+        result = 'ano bissesto de 400 em 400 anos'
+    }else if(ano%100 == 0){
+        result= 'nao é ano bissesto'
+    }else if(ano % 4 == 0){
+        result = 'é ano bissesto de 4 em 4'
+    }else{
+        result = 'nao é ano bissesto'
+    }
+    return result;
+}
+
+// console.log(anoBisesto(1988));
+
+// 12
+
+function fatorial(num){
+    let fatorial1 =0
+    if(num>1){
+       fatorial1 = num * fatorial(num - 1);
+}else{
+    fatorial1 = 1;
+}
+return fatorial1
+}
+
+// console.log(fatorial(5));
+// 
+
+function fatorial2(n){
+    let r = 1;
+    for(i=n; i > 1;i--){
+        r = r*i;
+    }
+    return r;
+}
+
+// console.log(fatorial2(5));
+
+// 13
+function diaUtil(dia){
+    let r = 'dia invalido'
+    switch (dia){
+        case 1: 
+          r ='domingo'
+          break
+
+          case 2: 
+          r ='segunda'
+          break
+        
+          case 3: 
+          r ='terça'
+          break
+
+         case 4: 
+         r ='quarta'
+         break
+
+
+        case 5: 
+            r ='quinta'
+        break
+
+           case 6: 
+          r ='sexta'
+          break
+  
+          case 7: 
+          r ='sabado'
+          break
+    }
+    return r;
+}
+
+// console.log(diaUtil(3));
+
+// 14
+function frutas(fruta){
+    let r =  'valor indefinido';
+    switch(fruta){
+        case 'maça':
+            r ='Não vendemos esta fruta aqui';
+            break
+        case 'kiwi':
+            r = 'Estamos com escassez de kiwis';
+            break
+        case 'melancia':
+            r= 'Aqui está, são 3 reais o quilo';
+            break
+    }
+    return r
+}
+
+// console.log(frutas('kiqwi'));
+
+// 15
+function lojaCarros(carro){
+    let r = "Não trabalhamos com este tipo de automóvel aqui";
+   switch(carro){
+    case 'hatch':
+        r = 'Compra efetuada com sucesso';
+        break
+    case 'sedans':
+        r= 'Tem certeza que não prefere este modelo?'
+        break
+    case 'motocicletas':
+        r= 'Tem certeza que não prefere este modelo?'
+        break
+    case 'caminhonetes':
+        r= 'Tem certeza que não prefere este modelo?'
+        break
+   }
+   return r;
+}
+
+// console.log(lojaCarros('hatc'));
+
+// 16
+function calculadora(num1 = 0,operacao,num2 = 0){
+    let r
+    switch(operacao){
+        case '+':
+            r=num1 + num2;
+            break
+        case '-':
+             r=num1 - num2;
+              break
+        
+         case '/':
+            r=num1 / num2;
+            break
+        
+            case '*':
+            r=num1 * num2;
+            break
+        
+            case '%':
+            r=num1 % num2;
+            break
+    }
+    return r;
+}
+
+// console.log(calculadora(2, '+' ,1));
+
+// 17
+function salario(nome,salario,plano){
+    let salarioAtualizado = salario
+    switch(plano){
+        case 'A':
+            salarioAtualizado = salario += salario * 0.1;
+            break
+        case 'B':
+            salarioAtualizado = salario += salario * 0.15;
+              break
+         case 'C':
+             salarioAtualizado = salario += salario * 0.2;
+              break
+    }
+    return `Ola ${nome} seu salario atualizado de acordo com seu plano ${plano} é:R$${salarioAtualizado}`;
+}
+
+// console.log(salario('nathan', 1000, 'a'));
+
+// 
+
+
+
+
+
+
+
+
