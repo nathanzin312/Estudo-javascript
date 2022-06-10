@@ -635,6 +635,117 @@ let kid2=[1,2]
 console.log(altura(kid1,kid2));
 
 // 28
+function parImpar(numeros){
+    let par=0;
+    let impar=0;
+    for(i in numeros){  
+       if(numeros[i] % 2 == 0){
+        par++;
+       }else{
+        impar++;
+       }
+    }
+    return `Ha :${par} pares e ${impar} Impares`;
+}
+
+let vetor = [1,2,3,4,5,6,7,8,9,10]
+// console.log(parImpar(vetor));
+
+// 29
+
+function intervalo(){
+    let x=0; //valores entre 10 e 20
+    let y=0; // valores fora do 10 e 20
+    for(i in arguments){
+        if(arguments[i] > 10 && arguments[i] <20){
+            x++;
+        }
+        else{
+            y++;
+        }
+    }
+    return `Ha :${x} entre 10 e 20 e ${y} fora`;
+}
+
+// console.log(intervalo(1,2,3,10,13,17,28));~
+
+// 30
+function maiorMenor(){
+    let bigger=0;
+    let small=100;
+    for(i in arguments){
+        if(arguments[i] > bigger){
+            bigger=arguments[i];
+        }
+        if(arguments[i]<small){
+            small=arguments[i];
+        }
+    }
+    return `O maior é ${bigger} e o menor é ${small}`;
+}
+
+// console.log(maiorMenor(1,2,3,4,5,6,7,8,9,10));
+// 31
+
+function negativo(){
+    let cont=0;
+    for(i in arguments){
+        if(Math.sign(arguments[i]) == -1){
+            cont++
+        }
+    }
+    return cont;
+}
+
+// console.log(negativo(1,3,-6,-9,8,-3,5,2));
+
+// 32
+function mediaAritimedia(vetor){
+    let sum = 0;
+    for(i in vetor){
+        sum+=vetor[i];
+    }
+    return sum/vetor.length;
+}
+
+// console.log(mediaAritimedia(vetor))
+
+// 33
+
+function concatVetores(vetorInteiro,vetorString,vetorDouble){
+    let vetor1 = vetorInteiro.concat(vetorString);
+    let vetor2 = vetorString.concat(vetorDouble); 
+    for(let i=0 ; i<3; i++){
+        for(let j=0;j<4; j++){
+
+        }
+    }
+    return vetor1
+    vetor2
+}
+let v1=[1,2,3,4]
+let v2=[' feijao no prato']
+let v3=[1.2,4.5]
+
+// console.log(concatVetores(v1,v2,v3));
+
+// 34
+function valores(v1,v2){
+    let r = false;
+    for(let i; i<v1.length; i++){
+        for(let j; j<v2.length; j++){
+            if(v1[i]==v2[j]){
+                r=true
+            }
+        }
+    }
+    return r
+}
+
+console.log(valores('ola','ola'));
+
+
+
 
 
 
