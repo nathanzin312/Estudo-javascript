@@ -732,17 +732,36 @@ let v3=[1.2,4.5]
 // 34
 function valores(v1,v2){
     let r = false;
-    for(let i; i<v1.length; i++){
-        for(let j; j<v2.length; j++){
+    let r1 = false
+    for(let i=0; i<v1.length; i++){
+        r=false
+        for(let j=0; j<v2.length ; j++){
             if(v1[i]==v2[j]){
-                r=true
+                console.log(v1[i])
+                r=true;
             }
         }
-    }
-    return r
+        if(r==false){
+            return `falso o prgrama parou aqui`
+            break
+        }else{
+            r1=true;
+        }
+  }
+    return r1    
+}
+let v11 ='olaq';
+let v22 = 'oqal';
+
+// console.log(valores(v11,v22));
+
+// 35
+
+function juntarArray(vetorAdiciona,vetorPilha){
+    return vetorAdiciona.concat(vetorPilha);
 }
 
-console.log(valores('ola','ola'));
+console.log(juntarArray(v1,v2));
 
 
 
