@@ -779,14 +779,68 @@ function multiploDe5(vetor , num){
     }
 }
 
-console.log(multiploDe5(v1,5));
+// console.log(multiploDe5(v1,5));
+
+// 37
+function pa(quantidadeTermos,primeiroTermo, razao){
+    let sum = primeiroTermo;
+    let numeros=[];
+    numeros[0]= primeiroTermo;
+    for(let i=1; i < quantidadeTermos; i++){
+        numeros[i]= primeiroTermo + (i * razao)
+        sum += numeros[i];
+    }
+    return `A soma dos ${numeros} da PA incrementando de ${razao} é: ${sum}`;
+}
+
+// console.log(pa(5,2,2));
+
+function pg(quantidadeTermos,primeiroTermo, razao){
+    let sum = primeiroTermo;
+    let numeros=[];
+    numeros[0]= primeiroTermo;
+    for(let i =1 ; i < quantidadeTermos;i++){
+        numeros[i]=primeiroTermo* (razao**i);
+        sum += numeros[i];
+    }
+    return `A soma dos ${numeros} da PG incrementando de ${razao} é: ${sum}`;
+}
+
+console.log(pg(4,90, 1/3));
 
 
+//38
+function impares(maior = 100 ,menor = 0){
+    let maior1 = maior;
+    let menor1= menor;
+    let result = [];
+    if(menor1>maior1){
+        maior1=menor1;
+        menor1=maior1
+    }
+    for(let i = menor1; i <maior1;i++){
+        if(i%2 != 0){
+        result.push(i);
+        }
+    }
+    return result;
+}
 
+// console.log(impares());
 
-
-
-
+//39
+function trocarVetor(v1,v2){
+    console.log(`o vetor A era:${v1} e o vetor b era: ${v2}`);
+    for(i in v1){
+        v1[i] += v2[i];
+        v2[i] = v1[i] - v2[i];
+        v1[i] = v1[i] - v2[i] ;
+    }
+    console.log(`o vetor A é: ${v1} e o B: ${v2}`);
+}
+let vetor4 = [1,2,3,4,5];
+let vetor5 = [5,4,3,2,1];
+// trocarVetor(vetor4,vetor5);
 
 
 
