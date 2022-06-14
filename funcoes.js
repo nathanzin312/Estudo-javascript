@@ -844,11 +844,58 @@ let vetor5 = [5,4,3,2,1];
 
 
 
+function thisFunctions2(){
+    this.idade=10;
+    setInterval(function fun2(){
+        console.log(this.idade+1);
+},1500);
+}
 
+// const tryq = thisFunctions2().bind(thisFunctions2);
+// console.log(tryq);
 
+// call e aply
+const casa = { 
+    nome:'apartamento',
+    numero:32,
+    limpar(){
+        console.log(this.nome);
+    }
+}
 
+let calll = function casinha(){
+   return this.limpar();
+}
 
+// console.log(calll.apply(casa));
 
+// 40
+// function tt(element,index,array){
+//     console.log(`O elemento ${element} de indice ${index} do array ${array}`);
+// }
+// console.log([2, 5, 9].forEach(tt));
 
+function conceitos(notas){
+    let conceitos = []
+    let conceito = 'D';
+    function testeNota(nota){
+        if(nota<=4.9){
+            conceito = "D"
+        }
+        else if(nota>=5 && nota <=6.9){
+            conceito = 'C';
+        }else if(nota>7 && nota<=8.9){
+            conceito = "B";
+        }else if(nota >=9 && nota <=100){
+            conceito = 'A'
+        }
+        return conceito
+    }
+    for(i in notas){
+        conceitos[i] = testeNota(notas[i]);
+    }
 
+    return conceitos;
+}
 
+console.log(conceitos([4,9,6,1,1]));
