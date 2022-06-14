@@ -756,14 +756,30 @@ let v22 = 'oqal';
 // console.log(valores(v11,v22));
 
 // 35
-
 function juntarArray(vetorAdiciona,vetorPilha){
     return vetorAdiciona.concat(vetorPilha);
 }
 
 console.log(juntarArray(v1,v2));
 
+// 36
+function multiplicar(vetor , num){
+    let vetorResult=[];
+    for(i in vetor){
+        vetorResult[i]= vetor[i]*num;
+    }
+    return vetorResult
+}
 
+function multiploDe5(vetor , num){
+    if(num>5){
+        return multiplicar(vetor,num);
+    }else{
+        return 'numero menor que 5'
+    }
+}
+
+console.log(multiploDe5(v1,5));
 
 
 
