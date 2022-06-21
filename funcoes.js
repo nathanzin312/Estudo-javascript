@@ -899,3 +899,33 @@ function conceitos(notas){
 }
 
 console.log(conceitos([4,9,6,1,1]));
+
+
+// primeira maneira de criar um obejeto
+let obejetoLiteral ={}
+
+let objetoLiteral2 = new Object(null);
+
+// console.log(typeof(objetoLiteral2))
+
+// funçao cronstutora
+function criaObejto(nome,idade){
+    this.nome=nome,
+    idade,
+    this.falarIdade = () => {
+        console.log(this.idade);
+    }
+}
+
+let objeto2 = new criaObejto('nome', 13);
+
+// function factory
+function criaObjeto2(nome, idade){
+    return {
+        nome,
+        idade
+    }
+}
+
+let objeto3 = criarObjeto('alex', 20);
+
