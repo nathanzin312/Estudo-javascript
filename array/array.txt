@@ -1,0 +1,31 @@
+Array 
+01/07/2022 20:00
+
+  O array em javascript é um objeto que organiza os itens atraves de indices!, um exemplo disso sao os metodos herdados do prototipo
+como por exemplo o .length .concat push entre outros.
+Diferente de outras linguagens o array pode contem itens de diferentes tipos, o recomendado é que cada array tenha itens de apenas um tipo.
+Podemos criar arrays atraves da funçao Array e da forma literal(mais recomendada).
+  exmplo1 
+  let pessoas = new Array('joao','maria','rafael'); //funçao
+
+  pessoas = ['joao','maria','rafael']; // literal
+
+Para adicionar itens no array usamos ou o valor da posiçao ou o metodo push()
+  Exemplo 2
+  let frutas = []//criando um array vazio
+  frutas[0] = 'banana'// adiciona a string banana na primeira posiçao do array
+  frutas.push('limao');//o metodo push vai adicionar o valor limao na proxima posiçao do ultimo valor definido, no caso posiçao 1
+  //esse metodo adiciona o valor 'limao' no fim do array
+
+Os arrays tem algumas funçoes que sao herdadas do seu prototipo, essas funçoes podem alterar o array ou retornar um novo array.
+  Exemplo 3
+  let nomes = ['rogerio', 'cleber','marcos'];
+  nomes.sort() //essa funçao vai mudar a ordem do array de forma aleatoria.
+  nomes.length //retorna o tamanho do array
+  nomes.splice(param1, param2, param3 ...)//esse metodo remove itens de um array apartir de um indice e adiciona novos itens se desejado
+  //o param1 é o indice da posiçao em que vai começar a remover
+  //param2 é a quantidade de posiçoes a serem removidas
+  // apartir do param3 sao os novos itens a serem adicionados 
+  nomes.splice(3, 2, 'roberta','maria'); // vai remover a apatir do indice 3 duas posiçoes e vai adicionar duas posiçoes roberta e maria
+ 
+  

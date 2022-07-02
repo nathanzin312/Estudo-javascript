@@ -929,3 +929,26 @@ function criaObjeto2(nome, idade){
 
 let objeto3 = criarObjeto('alex', 20);
 
+// objetos 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
