@@ -21,11 +21,51 @@ Os arrays tem algumas funçoes que sao herdadas do seu prototipo, essas funçoes
   Exemplo 3
   let nomes = ['rogerio', 'cleber','marcos'];
   nomes.sort() //essa funçao vai mudar a ordem do array de forma aleatoria.
+
   nomes.length //retorna o tamanho do array
+
   nomes.splice(param1, param2, param3 ...)//esse metodo remove itens de um array apartir de um indice e adiciona novos itens se desejado
   //o param1 é o indice da posiçao em que vai começar a remover
   //param2 é a quantidade de posiçoes a serem removidas
   // apartir do param3 sao os novos itens a serem adicionados 
   nomes.splice(3, 2, 'roberta','maria'); // vai remover a apatir do indice 3 duas posiçoes e vai adicionar duas posiçoes roberta e maria
- 
+
+Para adiconar itens no array temos alguns metodos:
+push() que adiciona um item no final do array, unshift() que adiciona um item na frente do array.
+ Exemplo 4
+let food = ['feijao','pizza','taco']
+
+food.push('hamburguer');//adiciona na ultima posiçao
+
+food.unshift('lasanha');//adiiona na primeira posiçao
+
+console.log(food);
+//resultado
+['lasanha','feijao','pizza','taco','hamburguer']
+
+Para remover itens de um array temos 4 modos:
+delete food[3] // deletando o itens de indice 3
+pop() //delete o ultimo iten de um array
+shift() //deleta o primeiro iten de un array
+splice(2,3) //como ja explicado esse metodo vai remover 3 itens apartir do indice 2 
+
+Esses metodos alteram o array contudo existem metodos que retornam um novo array modificado.
+let carros = ['uno','gol','chevette','saveiro','astra']
+let novoArray = carros.slice(2,4) // esse metodo vai retornar um novo array a partir do indice 2 ate o indice 4 porem o ulitmo iten nao sera enviado  
+
+console.log(novoArray);
+//resultado
+['chevette','saveiro']
+
+
+
+
+
+
+
+
+
+
+
+
   
