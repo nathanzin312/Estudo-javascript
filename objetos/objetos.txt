@@ -1,0 +1,3 @@
+   Objetos 
+Os objetos sao conjuntos de chave e valor. O objetos tem propriedades, o nomes dessas pripriedades sao strings por isso objetos sao arrays asocciativos.
+Os objetos herdam propriedades e metodos de outros objetos chamados prototipos . 
